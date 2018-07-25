@@ -1,6 +1,6 @@
 # Smart Mobile Analyzer
 
-Aplicativo para dispositivos Android com o objetivo de coletar informações (intensidade do sinal dos dados móveis, GPS, entre outras) e disponibilizá-las em um heatmap*.
+Aplicativo para dispositivos Android com o objetivo de coletar informações (intensidade do sinal dos dados móveis, GPS, entre outras) e disponibilizá-las em um heatmap.
 
 Pontos de melhoria:
 
