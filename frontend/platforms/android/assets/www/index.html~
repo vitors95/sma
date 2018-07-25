@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Type" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+        <title>Smart Mobile Analyzer</title>
+    </head>
+    <body onload="rememberInfo()">
+
+      <div id="loading_image" style="display:none">
+        <img src="img/ajax-loader.gif" class="ajax-loader">
+      </div>
+
+      <form name="formLogin">
+        <div class="imgcontainer">
+          <img src="img/logo.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label><b>Email</b></label>
+          <input id="email" type="text" placeholder="Digite seu e-mail" name="email" required>
+
+          <label><b>Senha</b></label>
+          <input id="senha" type="password" placeholder="Digite sua senha" name="psw" required>
+
+          <input type="button" value="Login" onclick="login()"></input>
+          <input id="remember" type="checkbox" checked="checked"> Lembrar-me
+        </div>
+
+      <!--  <div class="container" style="background-color:#f1f1f1">-->
+          <!-- <span class="psw">Esqueceu sua <a href="esqueceu_senha.html">senha?</a></span> -->
+
+          <span class="signup">Não possui cadastro? <a href="registro.html">Criar conta</a></span>
+      <!--  </div>-->
+      </form>
+      <script src="js/sha1.js"></script>
+      <script src="js/pbkdf2.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index_v2.js"></script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "_args": [
+    [
+      "cordova-plugin-signal-strength",
+      "/home/vitor/Documentos/Projetos/SMA/Smart Mobile Analyzer"
+    ]
+  ],
+  "_from": "cordova-plugin-signal-strength@latest",
+  "_id": "cordova-plugin-signal-strength@1.0.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cordova-plugin-signal-strength",
+  "_nodeVersion": "0.10.25",
+  "_npmUser": {
+    "email": "peter.vojtek@gmail.com",
+    "name": "petervojtek"
+  },
+  "_npmVersion": "3.4.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "cordova-plugin-signal-strength",
+    "raw": "cordova-plugin-signal-strength",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-signal-strength/-/cordova-plugin-signal-strength-1.0.3.tgz",
+  "_shasum": "3429695e225bb444a43e4185f0d9e4cd7971a7ef",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-signal-strength",
+  "_where": "/home/vitor/Documentos/Projetos/SMA/Smart Mobile Analyzer",
+  "author": {
+    "name": "Peter Vojtek"
+  },
+  "bugs": {
+    "url": "https://github.com/petervojtek/cordova-plugin-signal-strength/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-signal-strength",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Apache Cordova GSM Signal Strength Plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "3429695e225bb444a43e4185f0d9e4cd7971a7ef",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-signal-strength/-/cordova-plugin-signal-strength-1.0.3.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "gitHead": "16f0f7085c68d9e20bc99d5f6e54e42f323a38e4",
+  "homepage": "https://github.com/petervojtek/cordova-plugin-signal-strength",
+  "keywords": [
+    "cordova-android",
+    "dbm",
+    "ecosystem:cordova",
+    "gsm",
+    "signal",
+    "strength"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "petervojtek",
+      "email": "peter.vojtek@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-signal-strength",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petervojtek/cordova-plugin-signal-strength.git"
+  },
+  "scripts": {},
+  "version": "1.0.3"
+}

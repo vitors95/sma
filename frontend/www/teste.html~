@@ -1,0 +1,98 @@
+
+<html>
+<head>
+<title>Password-Based Key Derivation Function 2 (PBKDF2)</title>
+<style>
+body,div,p,a,td,input {font-family: Arial, Helvetica, sans-serif; font-size: 10pt;}
+h1 {font-size: 14pt; text-align: center;}
+h2 {font-size: 12pt; text-align: center;}
+#footer {font-size: 8pt; text-align: center; padding: 0 10 10 10}
+#status {background-color: #C1C1FF; padding: 10 10 10 10;}
+</style>
+</head>
+<body>
+
+<h1>
+Password-Based Key Derivation Function 2 (PBKDF2)<br>A JavaScript implementation (version 1.5)
+</h1>
+<h2>
+Parvez Anandam
+</h2>
+
+<div>
+<p>It is often necessary to derive an encryption key from a password. Passwords are easy for humans to remember whereas keys are needed in encryption schemes. A standard mechanism for performing a key derivation is given in <a href="http://www.ietf.org/rfc/rfc2898.txt">RFC 2898</a>. </p>
+<p>With the rise of AJAX, more powerful browser software is the norm. In the near future, it is likely that JavaScript-based encryption will find broad use. A JavaScript implementation of the password-based key derivation function 2 (PBKDF2) from RFC 2898 is presented here for use in such applications. The source code is available under the BSD license. It makes use of the excellent <a href="http://pajhome.org.uk/crypt/md5/sha1.html">SHA-1 JavaScript library</a> by <a href="http://pajhome.org.uk/crypt/md5/">Paul Johnston</a>.</p>
+<p> Thanks to Felix Gartsman for pointing out a serious bug in version 1.0</br>
+Thanks to Thijs Van der Schaeghe for pointing out a bug in version 1.1</br>
+Thanks to Richard Gautier for asking to clarify dependencies in version 1.2</br>
+Updated contact information from version 1.3</br>
+Thanks to Stuart Heinrich for pointing out updates to PAJ's SHA-1 library in version 1.4</br>
+Current version: 1.5</br>
+<p>Download the <b><a href="pbkdf2.js.txt">source code</a></b>.
+<p>Demo of the PBKDF2 JavaScript implementation:</p>
+</div>
+
+<form name="pbkdf2form">
+<table>
+<tr><td>Password:</td><td><input id="password" type="text" size="18"></td></tr>
+<tr><td>Salt:</td><td><input id="salt" type="text" size="18"></td></tr>
+<tr><td>Number of iterations:</td><td><input id="iterations" type="text" value="1000" size="4"></td></tr>
+<tr><td>Number of bytes for Key:</td><td><input id="bytes" type="text" value="16" size="4"></td></tr>
+<tr><td></td><td><input type="button" value="Derive Key" onclick="derive_key()"></td></tr>
+</table>
+</form>
+<div id="status"></div>
+
+<script src="sha1.js"></script>
+<script src="pbkdf2.js"></script>
+<script>
+function display_message(msg)
+{
+	document.getElementById("status").innerHTML = msg;
+}
+
+function derive_key()
+{
+	var password = document.pbkdf2form.password.value;
+	var salt = document.pbkdf2form.salt.value;
+	var iterations = document.pbkdf2form.iterations.value;
+	var bytes = document.pbkdf2form.bytes.value;
+
+	// Sanity checks
+	if (!password || !salt || !iterations || !bytes)
+		return display_message("Please fill in all values");
+
+	if (iterations < 0 || iterations > 10000)
+		return display_message("Invalid number of iterations. The maximum is limited to 10000 for this demo.");
+
+	if (bytes < 0 || bytes > 100)
+		return display_message("Invalid number of bytes. The maximum is limit to 100 for this demo.");
+
+	var mypbkdf2 = new PBKDF2(password, salt, iterations, bytes);
+	var status_callback = function(percent_done) {
+		display_message("Computed " + Math.floor(percent_done) + "%")};
+	var result_callback = function(key) {
+		display_message("The derived " + (bytes*8) + "-bit key is: " + key)};
+	mypbkdf2.deriveKey(status_callback, result_callback);
+}
+</script>
+
+<div id="footer">&copy; 2007-2013 <a href="mailto:parvez.anandam@gmail.com">Parvez Anandam</a></div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-0742652536796464";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Type" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="UTF-8">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/result.css">
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <title>Smart Mobile Analyzer</title>
+    </head>
+    <body onload="totalColetas()">
+
+      <div id="loading_image" style="display:none">
+        <img src="img/ajax-loader.gif" class="ajax-loader">
+      </div>
+
+      Escolha a operadora <select class="form-control" id="select_operadora">
+        <option value="TIM" selected>TIM</option>
+        <option value="Vivo">Vivo</option>
+        <option value="Oi">Oi</option>
+        <option value="Claro">Claro</option>
+        <option value="Nextel">Nextel</option>
+      </select>
+
+      <br>
+
+      Escolha a tecnologia <select class="form-control" id="select_tecnologia">
+        <option value="4G" selected>4G</option>
+        <option value="3G">3G</option>
+        <option value="2G">2G</option>
+      </select>
+      <br />
+      <br />
+      <input class="btn btn-primary center-block" type="button" value="Resultado" onclick="result()"</input>
+
+      <div id="floating-panel">
+        <!-- <button class="btn btn-primary center-block" onclick="toggleHeatmap()">Ativar Heatmap</button> -->
+        <label style="display:none;" id="lbColetas">Total de coletas: <label id="numColetas">0</label></label>
+        <label style="display:none;" id="lbEnquadradas">Coletas exibidas: <label id="numEnquadradas">0</label></label>
+        <!-- <button onclick="changeGradient()">Change gradient</button>
+        <button onclick="changeRadius()">Change radius</button>
+        <button onclick="changeOpacity()">Change opacity</button> -->
+      </div>
+
+      <div id="map"></div>
+
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlGHEnj83safUGrgMGldovQmbstPcugmg&libraries=visualization,geometry">
+      </script>
+      <script type="text/javascript" src="js/result.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "io.cordova.hellocordova",
+  "version": "1.0.0",
+  "displayName": "Smart Mobile Analyzer",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "org.apache.cordova.signal-strength": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "^6.2.1",
+    "cordova-plugin-signal-strength": "^1.0.3",
+    "cordova-plugin-whitelist": "1"
+  }
+}
